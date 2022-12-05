@@ -10,6 +10,7 @@ let stack7 = ['L', 'W', 'P', 'B', 'Z', 'V', 'N', 'S'];
 let stack8 = ['C', 'G', 'Q', 'J', 'R'];
 let stack9 = ['S', 'F', 'P', 'H', 'R', 'T', 'D', 'L'];
 
+let stack = [stack1, stack2, stack3, stack4, stack5, stack6, stack7, stack8, stack9];
 
 readFile('./input.txt', 'utf-8', (err, data) => {
   if (err) {
@@ -21,12 +22,14 @@ readFile('./input.txt', 'utf-8', (err, data) => {
     .replace(/ to /g, ',')
     .replace(/\n/g, '').split('move ');
 
-  console.log(dataArr);
 
-
-
+  for (i = 0; i <= dataArr.length; i++) {
+    for (k = 0; k <= dataArr[i].length; k++) {
+      dataArr[i].push
+    }
+  }
+  
+  console.log(stack);
 
 
 })
-
-'move 8 from stack8 to stack1'
