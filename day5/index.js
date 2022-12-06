@@ -22,12 +22,16 @@ const newArr = readFile('./input.txt', 'utf-8', (err, data) => {
     .replace(/ to /g, ',')
     .replace(/\n/g, '').split('move ');
 
-  
-  for (i = 0; i <= dataArr.length-1; i++) {
-      const numberArr = dataArr[i].split(',');
-      const newArr = numberArr.map(el => Number(el));
-      //to do- array nie wyhcodzi stala poza petle
-    };
+
+  for (i = 1; i <= dataArr.length - 1; i++) {
+    const numberArr = dataArr[i].split(',');
+    const newArr = numberArr.map(el => Number(el));
+    const numberOfItems = newArr[0]; // 7
+    const stackStart = stack[newArr[1]-1]; // 9
+    const stackEnd = stack[newArr[2]-1]; // 2
+        
+  };
 
 });
 
+console.log(stack)
