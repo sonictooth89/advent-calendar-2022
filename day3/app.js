@@ -16,6 +16,7 @@ readFile("./input.txt", "utf-8", (err, data) => {
 
         newArr.push([firstHalf, secondHalf]);
     }
+    //console.log(newArr);
 
     // make array with the same letters
     let singleLetterArray = [];
@@ -33,6 +34,8 @@ readFile("./input.txt", "utf-8", (err, data) => {
             }
         }
     }
+    //console.log(singleLetterArray);
+
     const alphabet = [
         "a",
         "b",
@@ -64,22 +67,28 @@ readFile("./input.txt", "utf-8", (err, data) => {
     const alphabet2 = alphabet.map((el) => el.toLocaleUpperCase());
 
     let arrayOfNumbers = [];
-    for (let i = 0; i <= 25; i++) {
-        let value = singleLetterArray[i];
-        let index = alphabet.indexOf(value) + 1;
-        if (index !== -1) {
+    for (let i = 0; i < singleLetterArray.length; i++) {
+        let letter = singleLetterArray[i];
+        let index = alphabet.indexOf(letter) + 1;
+        if (index != 0) {
             arrayOfNumbers.push(index);
+        } else {
+            let letter2 = singleLetterArray[i];
+            let index2 = alphabet2.indexOf(letter2) + 27;
+            arrayOfNumbers.push(index2);
         }
     }
-    for (let i = 0; i <= 25; i++) {
-        let value = singleLetterArray[i];
-        let index = alphabet2.indexOf(value) + 1;
-        if (index !== -1) {
-            arrayOfNumbers.push(index + 27);
-        }
-    }
+    //console.log(arrayOfNumbers[300]);
 
-    console.log(arrayOfNumbers);
+    // sum of elements of arrayOfNumbers
+
+    let sumOfElements = arrayOfNumbers.reduce((prev, curr) => {
+        return prev + curr;
+    }, 0);
+
+    console.log(sumOfElements);
+    //console.log(alphabet.indexOf("j") + 1);
+    //console.log(alphabet2.indexOf("A") + 27);
 
     // changing letter in number: a - z priority 1 - 26, A - Z priority 27 - 52
 });
